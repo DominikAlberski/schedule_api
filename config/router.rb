@@ -19,12 +19,16 @@ class Router < Sinatra::Base
     halt 403, {error: errors.join(" ")}.to_json
   end
 
-  get "/api/v1" do
-    {message: "pong"}.to_json
+  post "/deliveries" do
+    puts params
   end
 
   post "/exchange_key" do
     exchange_key.to_json
+  end
+
+  get "/api/v1" do
+    {message: "pong"}.to_json
   end
 
   get "/api/v1/doctors/:doctor_id/hours" do
