@@ -6,8 +6,11 @@ branches:
     - coverity_scan
 
 rvm:
-  - 2.7.8
+  - 3.0.6
   - 3.2.2
+
+before_install:
+  - gem install rubygems-update -v 3.3.27 # this is no longer needed after ruby upgrade over 3.0
 
 before_script:
   - bundle exec rake db:setup
@@ -18,14 +21,14 @@ script:
 jobs:
   include:
     - stage: lint
-      rvm: 2.7.5
+      rvm: 3.0.6
       name: "Lint code with standard"
       script:
         - bundle exec rake standard
 
     - stage: deploy
       if: branch = main
-      rvm: 2.7.5
+      rvm: 3.0.6
       name: "Test and Deploy to gh-pages"
       before_script:
         - bundle exec rake db:setup
