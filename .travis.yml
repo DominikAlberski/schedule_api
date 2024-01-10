@@ -3,6 +3,7 @@ cache: bundler
 branches:
   only:
     - main
+    - coverity_scan
 
 rvm:
   - 2.7.8
