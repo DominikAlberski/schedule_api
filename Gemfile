@@ -13,7 +13,7 @@ gem "jwt"
 
 gem "rake", "~> 13.0"
 
-gem "dotenv", "~> 2.8"
+gem "dotenv", "~> 3.0"
 
 group :development, :test do
   gem "debug", ">= 1.0.0"
