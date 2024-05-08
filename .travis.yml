@@ -39,6 +39,7 @@ jobs:
         - git commit -m "Add coverage report"
       deploy:
         provider: pages
+        edge: true
         cleanup: false
         github_token: $GITHUB_TOKEN
         local_dir: docs
