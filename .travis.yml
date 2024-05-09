@@ -37,10 +37,11 @@ jobs:
         - cp -r coverage docs
         - git add docs
         - git commit -m "Add coverage report"
+        - rvm use 3.1.2
       deploy:
         provider: pages
-        edge:
-          branch: v2.0.3-beta.4
+        edge: true
+          # branch: v2.0.3-beta.4
         cleanup: false
         github_token: $GITHUB_TOKEN
         local_dir: docs
