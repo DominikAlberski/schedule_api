@@ -22,28 +22,24 @@ jobs:
       script:
         - bundle exec rake standard
 
-    - stage: deploy
-      if: branch = main
-      name: "Test and Deploy to gh-pages"
-      before_script:
-        - bundle exec rake db:setup
-      script:
-        - bundle exec rake
-      before_deploy:
-        - cp -r coverage docs
-        - git add docs
-        - git commit -m "Add coverage report"
-
-      deploy:
-        provider: pages
-        edge: true
-        dpl_version: 2.0.3.beta.4
-        cleanup: false
-        github_token: $GITHUB_TOKEN
-        local_dir: docs
-        target_branch: gh-pages
-        on:
-          branch: main
+deploy:
+  provider: pages
+  edge: true
+  dpl_version: 2.0.3.beta.4
+  cleanup: false
+  github_token: $GITHUB_TOKEN
+  local_dir: docs
+  target_branch: gh-pages
+  on:
+    branch: main
+  before_script:
+    - bundle exec rake db:setup
+  script:
+    - bundle exec rake
+  before_deploy:
+    - cp -r coverage docs
+    - git add docs
+    - git commit -m "Add coverage report"
 
 stages:
   - lint
