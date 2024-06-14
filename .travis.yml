@@ -8,9 +8,6 @@ rvm:
   - 3.0.6
   - 3.2.2
 
-before_install:
-  - gem install rubygems-update -v 3.3.27 # this is no longer needed after ruby upgrade over 3.0
-
 before_script:
   - bundle exec rake db:setup
 
@@ -27,7 +24,6 @@ jobs:
 
     - stage: deploy
       if: branch = main
-      rvm: 3.0.6
       name: "Test and Deploy to gh-pages"
       before_script:
         - bundle exec rake db:setup
@@ -37,7 +33,6 @@ jobs:
         - cp -r coverage docs
         - git add docs
         - git commit -m "Add coverage report"
-        - rvm use 3.1.2
 
       deploy:
         provider: pages
