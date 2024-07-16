@@ -79,7 +79,7 @@ GEM
     multi_json (1.15.0)
     nio4r (2.5.9)
     parallel (1.25.1)
-    parser (3.3.3.0)
+    parser (3.3.4.0)
       ast (~> 2.4.1)
       racc
     pry (0.14.2)
@@ -105,7 +105,7 @@ GEM
     regexp_parser (2.9.2)
     reline (0.4.3)
       io-console (~> 0.5)
-    rexml (3.3.0)
+    rexml (3.3.2)
       strscan
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
@@ -155,7 +155,7 @@ GEM
       sinatra (~> 1.0)
     sqlite3 (2.0.2)
       mini_portile2 (~> 2.8.0)
-    standard (1.39.0)
+    standard (1.39.2)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
       rubocop (~> 1.64.0)
