@@ -161,7 +161,7 @@ GEM
     sinatra-json (0.1.0)
       multi_json (~> 1.0)
       sinatra (~> 1.0)
-    sqlite3 (2.0.4)
+    sqlite3 (2.1.0)
       mini_portile2 (~> 2.8.0)
     standard (1.40.0)
       language_server-protocol (~> 3.17.0.2)
@@ -206,7 +206,7 @@ DEPENDENCIES
   sinatra
   sinatra-activerecord
   sinatra-json
-  sqlite3 (~> 2.0.0)
+  sqlite3 (~> 2.1.0)
   standard (~> 1.31)
   zeitwerk
 
